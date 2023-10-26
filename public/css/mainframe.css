@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 260px;
+    background: #11101d;
+    z-index: 100;
+    transition: all 0.5s ease;
+}
+
+.sidebar.close{
+    width: 78px;
+}
+
+.sidebar .logo-details{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .logo-details i{
+    font-size: 30px;
+    color: #fff;
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.sidebar .logo-details .logo-name{
+    font-size: 22px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s ease;
+    transition-delay: 0.1s;
+}
+
+.sidebar.close .logo-details .logo-name{
+    transition-delay: 0s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar .nav-links{
+    height: 100%;
+    padding: 30px 0 150px 0;
+    overflow: auto;
+}
+
+.sidebar .nav-links{
+    overflow: visible;
+}
+
+.sidebar .nav-links::-webkit-scrollbar{
+    display: none;
+}
+
+.sidebar .nav-links li{
+    position: relative;
+    list-style: none;
+    transition: all 0.4s ease;
+}
+
+.sidebar .nav-links li:hover{
+    background: #1d1b31;
+}
+
+.sidebar .nav-links li .icon-link{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar.close .nav-links li .icon-link{
+    display: block;
+}
+
+.sidebar .nav-links li i {
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer ;
+}
+
+.sidebar .nav-links li.showMenu i.arrow{
+    transform: rotate(-180deg);
+}
+
+.sidebar.close .nav-links i.arrow{
+    display: none;
+}
+
+.sidebar .nav-links li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.sidebar .nav-links li a .link-name{
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.sidebar.close .nav-links li a .link-name{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar .nav-links li .sub-menu{
+    padding: 6px 6px 14px 80px;
+    margin-top: -10px;
+    background: #1d1b31;
+    display: none;
+}
+
+.sidebar .nav-links li.showMenu .sub-menu{
+    display: block;
+}
+
+.sidebar .nav-links li .sub-menu a {
+    color: #fff;
+    font-size: 15px;
+    padding: 3px 0;
+    white-space: nowrap;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-links li .sub-menu a:hover{
+    opacity: 1;
+}
+
+.sidebar.close .nav-links li .sub-menu{
+    position: absolute;
+    left: 100%;
+    top: -10px;
+    margin-top: 0;
+    padding: 10px 20px;
+    border-radius: 0 6px 6px 0;
+    transition: all 0.4s ease;
+    opacity: 0;
+    display: block;
+    pointer-events: none;
+    transition: 0s;
+}
+
+.sidebar.close .nav-links li:hover .sub-menu{
+    top: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar .nav-links li .sub-menu .link-name{
+    display: none;
+}
+
+.sidebar.close .nav-links li .sub-menu .link-name{
+    display: none;
+}
+
+.sidebar.close .nav-links li .sub-menu .link-name{
+    font-size: 18px;
+    opacity: 1;
+    display: block;
+}
+
+.sidebar .nav-links li .sub-menu.blank{
+    pointer-events: auto;
+    padding: 3px 20px 6px 16px;
+    transition: 0s;
+    opacity: 0;
+}
+
+
+.sidebar .nav-links li:hover .sub-menu.blank{
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.home-section{
+    position: relative;
+    background: rgb(230, 230, 230);
+    height: 100vh;
+    left: 260px;
+    width: calc(100% - 260px);
+    transition: all 0.5s ease;
+    overflow-y: auto;
+}
+
+.sidebar.close ~ .home-section{
+    left: 78px;
+    width: calc(100% - 78px);
+}
+
+.home-section .home-content{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.home-section .home-content .bx-menu,
+.home-section .home-content .text{
+    color: #11101d;
+    font-size: 35px;
+}
+
+.home-section .home-content .bx-menu{
+    margin: 0 15px;
+}
+
+.home-section .home-content .text{
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.styled-button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sidebar.close .styled-button {
+    display: block;
+    width: 78px;
+}
+
+.sidebar.close .styled-button .link-name {
+    display: none;
+    pointer-events: none;
+}
+
+.styled-button:hover {
+    background: #1d1b31;
+}
+
+.styled-button i {
+    height: 50px;
+    min-width: 78px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 20px;
+    transition: all 0.3s ease;
+
+}
+
+.styled-button .link-name {
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.styled-button:hover .link-name {
+    opacity: 1;
+}
+
+.sub-menu.blank {
+    padding: 3px 20px 6px 16px;
+    position: absolute;
+    left: 78px; /* Adjust the left position to match your sidebar width */
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0;
+    border-radius: 0 6px 6px 0;
+    background: #1d1b31;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    display: none;
+}
